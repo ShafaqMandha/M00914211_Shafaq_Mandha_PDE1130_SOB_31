@@ -17,15 +17,26 @@
 # Exams: 50, 51, 0
 # Average: 33
 # Grade: F
-# Student iis failing.
+# Student iis failing. (Corrected "iis" to "is")
 
 exam_one = int(input("Input exam grade one: "))
 
-exam_two = input("Input exam grade two: "))
+exam_two = int(input("Input exam grade two: "))
+'''
+    -	The error in the above code was that an additional parenthesis was added in the end.
+    -	Since the input taken by the user is supposed to be an integer value I set the string value as int(input(" ")).
 
-exam_3 = str(input("Input exam grade three: "))
+'''
 
-grades = [exam_one exam_two exam_three]
+exam_three = str(input("Input exam grade three: "))
+'''
+    -	Changed the "str" to "int". Since the input taken by the user is supposed to be an integer value I set the string value as int(input(" ")).
+    -	Changed the variable name "exam_3" to "exam_three" to match the variable name of that mentioned in the array.
+
+'''
+
+grades = [exam_one, exam_two, exam_three]
+# Added a comma between the variable names in the array.
 sum = 0
 for grade in grade:
   sum = sum + grade
