@@ -38,7 +38,9 @@ exam_three = str(input("Input exam grade three: "))
 grades = [exam_one, exam_two, exam_three]
 # Added a comma between the variable names in the array.
 sum = 0
-for grade in grade:
+for grade in grades: 
+# Changed "grade" to "grades" as the correct variable name is set as "grades" and "grade" undefined. 
+
   sum = sum + grade
 
 avg = sum / len(grdes)
