@@ -1,13 +1,25 @@
 import random
 
+cowbullcount=[] # declaring an empy list
 def compare_numbers(number, user_guess):
     ## your code here
-    return cowbull
+    current = 0 #Intializing the variables first
+    cows = 0
+    bulls = 0
+    for i in user_guess:
+        if i in number:
+            cows+=1
+            if number[current]==i:
+                bulls+1
+        else:
+            current+=1
+    cowbullcount=[cows,bulls]
+    return cowbullcount # Changed "cowbull" to "cowbullcount". 
 
 playing = True #gotta play the game
 number = str(random.randint(0,9999)) #random 4 digit number
 guesses = 0
-print number
+print(number) # Changed "print number" to "print(number)"
 
 print("Let's play a game of Cowbull!") #explanation
 print("I will generate a number, and you have to guess the numbers one digit at a time.")
@@ -16,7 +28,7 @@ print("The game ends when you get 4 bulls!")
 print("Type exit at any prompt to exit.")
 
 while playing:
-    user_guess = raw_input("Give me your best guess!")
+    user_guess = input("Give me your best guess!") #Changed "raw_input" to "input"
     if user_guess == "exit":
         break
     cowbullcount = compare_numbers(number,user_guess)
@@ -26,7 +38,7 @@ while playing:
 
     if cowbullcount[1]==4:
         playing = False
-        print("You win the game after " + str(guesses) + "! The number was "+str(number))
+        print("You win the game after " + str(guesses) + "guesses! The number was "+str(number)) #Added guesses before the "!" mark.
         break #redundant exit
     else:
         print("Your guess isn't quite right, try again.")
