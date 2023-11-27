@@ -1,7 +1,6 @@
 #tictactoe game.
 
-# Find the 4 errors in the code and fix them,
-# so the game works as expected.
+#Find the 4 errors in the code and fix them, so the game works as expected.
 
 def draw_line(width, edge, filling):
     print(filling.join([edge] * (width + 1)))
@@ -67,7 +66,7 @@ def add_piece(game, player, row, column):
     row: 0-index row
     column: 0-index column
     """
-    game[row][column+1] = player
+    game[row][column] = player # Changed [coloumn+1] to [coloumn] (semantic error)
     return game
 
 def check_space_empty(game, row, column):
@@ -77,7 +76,7 @@ def convert_input_to_coordinate(user_input):
     return user_input - 1
 
 def switch_player(player):
-    if player = 1:
+    if player == 1: # Changed "if player = 1" to "if player == 1" to match the condition if it player equals 1 then return 2.
         return 2
     else:
         return 1
@@ -93,17 +92,18 @@ if __name__ == '__main__':
     game = start_game()
     display_game(game)
     player = 1
-    winner = 0  # the winner is not yet defined
+    winner = 0  
 
     while winner == 0 and moves_exist(game):
         print("Currently player: " + str(player))
         available = False
-        while not available
+        while not available: # Addded a colon in the end (syntax error)
             row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
             column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
-            available = check_space_empty(game, row)
+            available = check_space_empty(game, row, column) 
+            # ^ Changed "check_space_empty(game, row)" to "check_space_empty(game, row, column)" in order to check if the column has empty spaces. (semantic error)
         game = add_piece(game, player, row, column)
         display_game(game)
         player = switch_player(player)
-#        winner = check_winner(game)
+        winner = check_winner(game) # Removed the "#" and indented the code 
     display_winner(winner)
