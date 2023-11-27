@@ -17,9 +17,10 @@
 # Exams: 50, 51, 0
 # Average: 33
 # Grade: F
-# Student iis failing. (Corrected "iis" to "is")
+# Student is failing. 
 
 exam_one = int(input("Input exam grade one: "))
+
 
 exam_two = int(input("Input exam grade two: "))
 '''
@@ -28,7 +29,7 @@ exam_two = int(input("Input exam grade two: "))
 
 '''
 
-exam_three = str(input("Input exam grade three: "))
+exam_three = int(input("Input exam grade three: "))
 '''
     -	Changed the "str" to "int". Since the input taken by the user is supposed to be an integer value I set the string value as int(input(" ")).
     -	Changed the variable name "exam_3" to "exam_three" to match the variable name of that mentioned in the array.
@@ -37,23 +38,31 @@ exam_three = str(input("Input exam grade three: "))
 
 grades = [exam_one, exam_two, exam_three]
 # Added a comma between the variable names in the array.
-sum = 0
-for grade in grades: 
-# Changed "grade" to "grades" as the correct variable name is set as "grades" and "grade" undefined. 
 
-  sum = sum + grade
-
-avg = sum / len(grdes)
+total_grade = 0 # "sum is already a predefined functon in python so there I changed the variable name to total_grade
+for grade in grades: # Changed "grade" to "grades" as the correct variable name is set as "grades" and "grade" undefined.
+    total_grade = total_grade + grade
+avg = total_grade / len(grades) # Changed "grdes" to "grades" since we need to take the length of the array grades and the array grdes does not exist
 
 if avg >= 90:
     letter_grade = "A"
-elif avg >= 80 and avg < 90
+elif avg >= 80 and avg < 90:
     letter_grade = "B"
+    '''
+        Corrections made in above two lines:
+            - Added a colon as it was missing causing a syntax error.
+    '''
 elif avg > 69 and avg < 80:
-    letter_grade = "C'
-elif avg <= 69 and avg >= 65:
+    letter_grade = "C"
+    '''
+        Corrections made:
+            - Changed single quotation at the end of C to double quotations.
+    '''
+
+elif avg >=60 and avg < 70:
     letter_grade = "D"
-elif:
+
+else: # Changed "elif" to "else".
     letter_grade = "F"
 
 for grade in grades:
@@ -63,7 +72,7 @@ for grade in grades:
 
     print("Grade: " + letter_grade)
 
-if letter-grade is "F":
-    print "Student is failing."
+if letter_grade == "F":
+    print("Student is failing.")
 else:
-    print "Student is passing."
+    print("Student is passing.")
