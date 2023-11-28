@@ -1,3 +1,9 @@
+'''
+    Name: Shafaq Mandha 
+    MISIS: M00914211
+    Module: PDE1130
+    SOB no. 31
+'''
 import random
 
 cowbullcount=[] # declaring an empy list
