@@ -1,3 +1,9 @@
+'''
+    Name: Shafaq Mandha 
+    MISIS: M00914211
+    Module: PDE1130
+    SOB no. 31
+'''
 #tictactoe game.
 
 #Find the 4 errors in the code and fix them, so the game works as expected.
